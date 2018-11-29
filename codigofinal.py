@@ -109,8 +109,8 @@ def main():
     objetoysupuntodepartidax = random.randrange(0, Surface_ancho)
     objetoysupuntodepartiday = -600
     velocidaddelobstaculoinicial = 3
-    anchodelobjeto = 118
-    altodelobjeto = 100
+    anchodelobjeto = 140
+    altodelobjeto = 85
     
     Score=0
  
