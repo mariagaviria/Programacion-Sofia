@@ -1,26 +1,26 @@
 import pygame
 import time
-
 import random
 
 
 pygame.init()
 
-Surface_ancho = 750
-Surface_alto = 1000
+Surface_ancho = 900
+Surface_alto = 600
 
 gameSurfaces = pygame.display.set_mode((Surface_ancho,Surface_alto))
 pygame.display.set_caption('Dodging Whale')
 
 Img = pygame.image.load("ballena.png")
+Img = pygame.transform.scale(Img,(100,170))
 fondo= pygame.image.load("fondo-arenoso.jpeg")
-fondo = pygame.transform.scale(fondo,(1000,1000))
+fondo = pygame.transform.scale(fondo,(900,600))
 
 imgcom=pygame.image.load('comienzodel.jpeg')
-imgcom= pygame.transform.scale(imgcom,(1000,1000))
+imgcom= pygame.transform.scale(imgcom,(900,600))
 
-ballenita_ancho= 128
-ballenita_alto=206
+ballenita_ancho= 100
+ballenita_alto= 170
 
 verde=(103, 234, 26)
 colordescore=(255,254,0)
@@ -31,9 +31,9 @@ gris=(154,152,155)
 clock = pygame.time.Clock()
 
 def obstaculoesquivado(contador):
-    font=pygame.font.SysFont('freesansbold.ttf',35)
+    font=pygame.font.SysFont('freesansbold.ttf',25)
     Textodescore= font.render("SCORE: "+str(contador), True, colordescore)
-    gameSurfaces.blit(Textodescore, (0,950))
+    gameSurfaces.blit(Textodescore, (0,0))
     
 
 def creaciondelobstaculo(ladox,ladoy,objetoancho,objetoalto,color):
@@ -93,7 +93,7 @@ def intro_game():
         TextRect.center= ((Surface_ancho/2),(Surface_alto/2))
         gameSurfaces.blit(TextSurf, TextRect)
         
-        interacciondelboton("Start",300,610,150,100,moradoclaro,morado,main)
+        interacciondelboton("Start",400,400,90,80,moradoclaro,morado,main)
         
         pygame.display.flip()
         clock.tick(15)
@@ -101,16 +101,16 @@ def intro_game():
               
 
 def main():  
-    x = (Surface_ancho*0.45)
-    y = (Surface_alto*0.8)
+    x = (Surface_ancho*0.40)
+    y = (Surface_alto*0.73)
     
     lavariaciondex = 0
     
     objetoysupuntodepartidax = random.randrange(0, Surface_ancho)
     objetoysupuntodepartiday = -600
     velocidaddelobstaculoinicial = 3
-    anchodelobjeto = 140
-    altodelobjeto = 85
+    anchodelobjeto = 120
+    altodelobjeto = 65
     
     Score=0
  
